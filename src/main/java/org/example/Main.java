@@ -140,7 +140,7 @@ public class Main {
                     b.display_sold();
                     break;
                 case 2 :
-                    b.depot();
+                    b.deposit();
                     break;
                 case 3 :
                     b.withraw();
@@ -149,7 +149,7 @@ public class Main {
                     b.display_Sold_Saving_Account();
                     break;
                 case 5:
-                    b.depot_Saving_Account();
+                    b.deposit_Saving_Account();
                     break;
                 case 6:
                     e_Bank();

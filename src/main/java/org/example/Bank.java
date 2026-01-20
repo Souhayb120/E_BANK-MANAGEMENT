@@ -135,7 +135,7 @@ public class Bank {
 
 
     //DEPOT MONEY
-    public void depot(){
+    public void deposit(){
         System.out.println("Enter Account Number : ");
         int number = sc.nextInt();
         Account account = null;
@@ -248,7 +248,7 @@ public class Bank {
 
 
     // DEPOT MONEY TO THE SAVING ACCOUNT
-    public void depot_Saving_Account(){
+    public void deposit_Saving_Account(){
         System.out.println("Enter Account Number : ");
         int number = sc.nextInt();
         SavingAccount account = null;
