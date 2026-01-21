@@ -3,15 +3,16 @@ package org.example;
 import  java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.Stream;
 
 public class Bank {
     private int bank_id;
     private String bank_name;
     private String adress;
     private int phone;
-    List<Account> accountlist;
-    List<SavingAccount> savingAccountList;
-    List<Client> clientList;
+    static List<Account> accountlist;
+   private List<SavingAccount> savingAccountList;
+    private List<Client> clientList;
 
     public Bank(int bank_id, String bank_name, String adress, int phone) {
         this.bank_id = bank_id;
@@ -23,6 +24,8 @@ public class Bank {
         this.savingAccountList = new ArrayList<>();
 
     }
+
+
     // Declare Scanner Variable to Get User Input
     Scanner sc = new Scanner(System.in);
 
@@ -51,8 +54,31 @@ public class Bank {
         this.phone = phone;
     }
 
+    public List<SavingAccount> getSavingAccountList() {
+        return savingAccountList;
+    }
 
-    //***************************
+    public void setSavingAccountList(List<SavingAccount> savingAccountList) {
+        this.savingAccountList = savingAccountList;
+    }
+
+    public static List<Account> getAccountlist() {
+        return accountlist;
+    }
+
+    public void setAccountlist(List<Account> accountlist) {
+        this.accountlist = accountlist;
+    }
+
+    public List<Client> getClientList() {
+        return clientList;
+    }
+
+    public void setClientList(List<Client> clientList) {
+        this.clientList = clientList;
+    }
+
+//***************************
     // Admin Methods
     //***************************
 

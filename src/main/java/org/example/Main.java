@@ -52,7 +52,8 @@ public class Main {
             System.out.println("3. Add New Account");
             System.out.println("4. Delete an Account");
             System.out.println("5. Saving Accounts Management");
-            System.out.println("6. Go Back to Main Menu");
+            System.out.println("6. Export Accounts File");
+            System.out.println("7. Go Back to Main Menu");
             System.out.println("#################################################");
             System.out.println("Make ur choise : ");
             choice = Integer.parseInt(sc.nextLine());
@@ -74,6 +75,9 @@ public class Main {
                     saving_Acounts();
                     break;
                 case 6:
+                  ExcelGenerator.execute();
+                    break;
+                case 7:
                     e_Bank();
                     break;
                 default:
@@ -166,11 +170,8 @@ public class Main {
 
     public static void main(String[] args) {
 
-
         //*********************//*****************************
-        //
-        e_Bank();           // Main Fuction Run the Programe
-        //
+        e_Bank();           // Main Function Run the Program
         //*****************//*********************************
 
 
