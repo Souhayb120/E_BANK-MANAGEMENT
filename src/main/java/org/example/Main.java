@@ -132,10 +132,11 @@ public class Main {
             System.out.println("1. Display Sold");
             System.out.println("2. Depot Money");
             System.out.println("3. Withdraw Money");
-            System.out.println("4. Display saving account Sold");
-            System.out.println("5. Depot Money in Saving account");
-            System.out.println("6. Withdraw Money from Saving account");
-            System.out.println("7. Go Back to Main Menu");
+            System.out.println("4. Trensfer Money");
+            System.out.println("5. Display saving account Sold");
+            System.out.println("6. Depot Money in Saving account");
+            System.out.println("7. Withdraw Money from Saving account");
+            System.out.println("8. Go Back to Main Menu");
             System.out.println("###################################################");
             System.out.println("Make ur choise : ");
             choice = sc.nextInt();
@@ -151,15 +152,18 @@ public class Main {
                     b.withraw();
                     break;
                 case 4:
-                    b.display_Sold_Saving_Account();
+                    b.make_vairment();
                     break;
                 case 5:
-                    b.deposit_Saving_Account();
+                    b.display_Sold_Saving_Account();
                     break;
                 case 6:
-                    b.withraw_Saving_account();
+                    b.deposit_Saving_Account();
                     break;
                 case 7:
+                    b.withraw_Saving_account();
+                    break;
+                case 8:
                     e_Bank();
                     break;
                 default:
@@ -174,9 +178,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //*********************//*****************************
-         e_Bank();             // Main Function Run the Program
-        //*******************//*******************************
+        //*********************//******************************
+         e_Bank();            // Main Function Runs the Program
+        //*******************//********************************
 
 
     }

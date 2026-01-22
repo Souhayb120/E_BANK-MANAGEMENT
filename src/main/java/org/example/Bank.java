@@ -159,10 +159,14 @@ public class Bank {
                     account = act;
                 }
             }
-            if (account != null) {
-                accountlist.remove(account);
-                System.out.println("account delete successfully !!");
+            if (account != null ) {
+                if( account.getSold_initial() > 0){
+                    System.out.println("you can't delete an Account that contains Money !!");
+                }else{
 
+                    accountlist.remove(account);
+                    System.out.println("account delete successfully !!");
+                }
             } else {
                 System.out.println("account not found !!");
             }
@@ -413,6 +417,57 @@ public class Bank {
             System.out.println("Errore Deleting Saving account , make sure u enter a number !! " + e);
         }
 
+    }
+
+    //********************************
+    // TRENSFER MONEY TO OTHER ACCOUNT
+    //********************************
+
+
+    public void make_vairment(){
+        try {
+            System.out.println("Enter Account Number : ");
+            int number = sc.nextInt();
+            Account account = null;
+            for (Account act : accountlist) {
+                if (number == act.getN_compte()) {
+                    account = act;
+                }
+            }
+            if (account != null) {
+                System.out.println("Entrer Number accounte de  benificial ");
+                int account_benificial = sc.nextInt();
+                Account account_b = null;
+                for (Account act : accountlist) {
+                    if (account_benificial == act.getN_compte()) {
+                        account_b = act;
+                    }
+                }
+                if (account_b != null){
+                    System.out.println("how much money u wanna trensfer  to " + account_b.getClient().getName());
+                    double money = sc.nextDouble();
+                    if(money > account.getSold_initial() || money < 1){
+                        System.out.println("Current Balance is not enough to make this operation !!");
+                    }else{
+                        account.setSold_initial(account.getSold_initial() - money);
+                        System.out.println(" -" + money);
+                        System.out.println("Sender Current Balance " + account.getSold_initial());
+                        account_b.setSold_initial(account_b.getSold_initial() + money);
+                        System.out.println(" +" + money);
+                        System.out.println("Beneficiary Current Balance " + account_b.getSold_initial());
+                        System.out.println("*****************************************");
+                        System.out.println("Operation Made Successfully !!");
+                    }
+
+                }else{
+                    System.out.println("account benificial not found");
+                }
+            } else {
+                System.out.println("account not found !!");
+            }
+        } catch (Exception e) {
+            System.out.println("Errore Trenfer Money " + e);
+        }
     }
 
 }
