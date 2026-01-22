@@ -223,9 +223,12 @@ public class Bank {
             if (account != null) {
                 System.out.println("how much u wanna withdraw ");
                 double money = sc.nextDouble();
-                account.setSold_initial(account.getSold_initial() - money);
-                System.out.println("current sold now : " + account.getSold_initial());
-
+                if(money > account.getSold_initial()){
+                    System.out.println("you don't have this amount of money !!");
+                }else{
+                    account.setSold_initial(account.getSold_initial() - money);
+                    System.out.println("current sold now : " + account.getSold_initial());
+                }
             } else {
                 System.out.println("account not found !!");
             }
@@ -360,10 +363,15 @@ public class Bank {
               do{
                   System.out.println("how much u wanna withdraw ");
                   money = sc.nextDouble();
-                  if(money > 100){
-                      System.out.println("u can't withdraw this amount of money from ur saving account !!!");
-                      System.out.println("try less than 100$");
+                  if (money <= account.getSold_initial()){
+                      if(money > 100){
+                          System.out.println("u can't withdraw this amount of money from ur saving account !!!");
+                          System.out.println("try less than 100$");
+                      }
+                  }else {
+                      System.out.println("you don't have this amount of money sorry !!");
                   }
+
               }while(money > 100);
               account.setSold_initial(account.getSold_initial() - money);
               System.out.println("current sold now : " + account.getSold_initial());
